@@ -1,0 +1,2 @@
+Not a thing = $${{NOT_A_THING}}
+$${{A_THING}} = a thing
