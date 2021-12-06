@@ -52,7 +52,10 @@ func Inject(root string) error {
 				contentsStr = strings.ReplaceAll(contentsStr, tokenStart+envVar+tokenEnd, os.Getenv(envVar))
 			}
 
-			ioutil.WriteFile(path, []byte(contentsStr), 0644)
+			err = ioutil.WriteFile(path, []byte(contentsStr), 0644)
+			if err!=nil {
+				fmt.Printf("error writing file : %v : %v", path,  err.Error())
+			}
 		}
 
 		if err != nil {
